@@ -49,10 +49,10 @@
             this.txtLogradouro = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtBairro = new System.Windows.Forms.TextBox();
-            this.txtNumero = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.cbxTipoLogradouro = new System.Windows.Forms.ComboBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,7 +68,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 45);
+            this.label2.Location = new System.Drawing.Point(9, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(30, 13);
             this.label2.TabIndex = 1;
@@ -77,7 +77,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 82);
+            this.label3.Location = new System.Drawing.Point(9, 44);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 2;
@@ -190,16 +190,16 @@
             // 
             // mtxCPF
             // 
-            this.mtxCPF.Location = new System.Drawing.Point(74, 42);
+            this.mtxCPF.Location = new System.Drawing.Point(74, 72);
             this.mtxCPF.Name = "mtxCPF";
-            this.mtxCPF.Size = new System.Drawing.Size(184, 20);
+            this.mtxCPF.Size = new System.Drawing.Size(163, 20);
             this.mtxCPF.TabIndex = 14;
             // 
             // txtTel
             // 
-            this.txtTel.Location = new System.Drawing.Point(74, 79);
+            this.txtTel.Location = new System.Drawing.Point(74, 37);
             this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(184, 20);
+            this.txtTel.Size = new System.Drawing.Size(163, 20);
             this.txtTel.TabIndex = 15;
             // 
             // cbxCidade
@@ -243,48 +243,50 @@
             this.txtBairro.Size = new System.Drawing.Size(199, 20);
             this.txtBairro.TabIndex = 20;
             // 
-            // txtNumero
-            // 
-            this.txtNumero.Location = new System.Drawing.Point(312, 138);
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(121, 20);
-            this.txtNumero.TabIndex = 21;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(284, 145);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(22, 13);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "Nº:";
-            // 
             // cbxTipoLogradouro
             // 
             this.cbxTipoLogradouro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTipoLogradouro.FormattingEnabled = true;
-            this.cbxTipoLogradouro.Location = new System.Drawing.Point(312, 170);
+            this.cbxTipoLogradouro.Location = new System.Drawing.Point(287, 138);
             this.cbxTipoLogradouro.Name = "cbxTipoLogradouro";
-            this.cbxTipoLogradouro.Size = new System.Drawing.Size(121, 21);
+            this.cbxTipoLogradouro.Size = new System.Drawing.Size(146, 21);
             this.cbxTipoLogradouro.TabIndex = 23;
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(391, 258);
+            this.listBox1.Location = new System.Drawing.Point(287, 35);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(61, 56);
+            this.listBox1.Size = new System.Drawing.Size(146, 69);
             this.listBox1.TabIndex = 24;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(256, 35);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(25, 23);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "+";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(256, 72);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(24, 23);
+            this.button2.TabIndex = 26;
+            this.button2.Text = "-";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // FormCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(926, 478);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.cbxTipoLogradouro);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.txtBairro);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtLogradouro);
@@ -337,9 +339,9 @@
         private System.Windows.Forms.TextBox txtLogradouro;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtBairro;
-        private System.Windows.Forms.TextBox txtNumero;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbxTipoLogradouro;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

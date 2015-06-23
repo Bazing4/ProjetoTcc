@@ -83,12 +83,6 @@ namespace ProjetoTcc.Views.Cliente
                 return false;
             }
 
-            if (txtNumero.Text == "" || txtNumero.Text == null)
-            {
-                MessageBox.Show("Número Invalido!");
-                return false;
-            }
-
             if (txtTel.Text == "" || txtTel.Text == null)
             {
                 MessageBox.Show("Número Invalido!");
@@ -112,7 +106,6 @@ namespace ProjetoTcc.Views.Cliente
             pessoa.endereco.Bairro = txtBairro.Text;
             pessoa.endereco.cidade.NomeCidade = (cbxCidade.SelectedValue.ToString());
             pessoa.endereco.Logradouro = txtLogradouro.Text;
-            pessoa.endereco.Numero = Convert.ToInt16(txtNumero.Text);
             pessoa.endereco.tipo_logradouro.Descricao = (cbxTipoLogradouro.SelectedValue.ToString()); //endereco
             pessoa.telefone.Numero = Convert.ToInt32(txtTel.Text);
 
@@ -123,7 +116,6 @@ namespace ProjetoTcc.Views.Cliente
             pessoa = new pessoa();
             txtTel.Text = "";
             txtPesquisar.Text = "";
-            txtNumero.Text = "";
             txtNome.Text = "";
             txtLogradouro.Text = "";
             txtBairro.Text = "";
@@ -155,7 +147,6 @@ namespace ProjetoTcc.Views.Cliente
                             cpf = pe.CPF,
                             observacao= pe.Observacao,
                             endereco=e.Logradouro,
-                            numeroEndereco =e.Numero,
                             bairro=e.Bairro,
                             cidade=c.NomeCidade,
                             telefone=t.Numero,
@@ -167,10 +158,9 @@ namespace ProjetoTcc.Views.Cliente
             dgvClientes.Columns[1].HeaderText = "CPF";
             dgvClientes.Columns[2].HeaderText = "Observação"; 
             dgvClientes.Columns[3].HeaderText = "Endereço";
-            dgvClientes.Columns[4].HeaderText = "Número";
-            dgvClientes.Columns[5].HeaderText = "Bairro";
-            dgvClientes.Columns[6].HeaderText = "Cidade";
-            dgvClientes.Columns[7].HeaderText = "Telefone";
+            dgvClientes.Columns[4].HeaderText = "Bairro";
+            dgvClientes.Columns[5].HeaderText = "Cidade";
+            dgvClientes.Columns[6].HeaderText = "Telefone";
         }
 
 
@@ -190,7 +180,6 @@ namespace ProjetoTcc.Views.Cliente
 
                 txtBairro.Text = pessoa.endereco.Bairro;
                 txtLogradouro.Text = pessoa.endereco.Logradouro;
-                txtNumero.Text = pessoa.endereco.Numero.ToString();
                 txtTel.Text = pessoa.telefone.Numero.ToString();
                 cbxCidade.SelectedValue = pessoa.endereco.cidade.NomeCidade;
                 cbxTipoLogradouro.SelectedValue = pessoa.endereco.tipo_logradouro.Descricao;
