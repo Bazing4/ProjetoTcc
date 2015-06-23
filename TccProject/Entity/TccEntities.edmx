@@ -1,0 +1,928 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="keite_modasModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="keite_modasModelStoreContainer">
+          <EntitySet Name="cidade" EntityType="keite_modasModel.Store.cidade" store:Type="Tables" Schema="keite_modas" />
+          <EntitySet Name="endereco" EntityType="keite_modasModel.Store.endereco" store:Type="Tables" Schema="keite_modas" />
+          <EntitySet Name="imagem_produto" EntityType="keite_modasModel.Store.imagem_produto" store:Type="Tables" Schema="keite_modas" />
+          <EntitySet Name="item_venda" EntityType="keite_modasModel.Store.item_venda" store:Type="Tables" Schema="keite_modas" />
+          <EntitySet Name="parcelas" EntityType="keite_modasModel.Store.parcelas" store:Type="Tables" Schema="keite_modas" />
+          <EntitySet Name="pessoa" EntityType="keite_modasModel.Store.pessoa" store:Type="Tables" Schema="keite_modas" />
+          <EntitySet Name="produto" EntityType="keite_modasModel.Store.produto" store:Type="Tables" Schema="keite_modas" />
+          <EntitySet Name="telefone" EntityType="keite_modasModel.Store.telefone" store:Type="Tables" Schema="keite_modas" />
+          <EntitySet Name="tipo_logradouro" EntityType="keite_modasModel.Store.tipo_logradouro" store:Type="Tables" Schema="keite_modas" />
+          <EntitySet Name="tipo_telefone" EntityType="keite_modasModel.Store.tipo_telefone" store:Type="Tables" Schema="keite_modas" />
+          <EntitySet Name="tipoproduto" EntityType="keite_modasModel.Store.tipoproduto" store:Type="Tables" Schema="keite_modas" />
+          <EntitySet Name="uf" EntityType="keite_modasModel.Store.uf" store:Type="Tables" Schema="keite_modas" />
+          <EntitySet Name="venda" EntityType="keite_modasModel.Store.venda" store:Type="Tables" Schema="keite_modas" />
+          <AssociationSet Name="FKEndereco412701" Association="keite_modasModel.Store.FKEndereco412701">
+            <End Role="tipo_logradouro" EntitySet="tipo_logradouro" />
+            <End Role="endereco" EntitySet="endereco" />
+          </AssociationSet>
+          <AssociationSet Name="FKEndereco471629" Association="keite_modasModel.Store.FKEndereco471629">
+            <End Role="pessoa" EntitySet="pessoa" />
+            <End Role="endereco" EntitySet="endereco" />
+          </AssociationSet>
+          <AssociationSet Name="FKEndereco650717" Association="keite_modasModel.Store.FKEndereco650717">
+            <End Role="cidade" EntitySet="cidade" />
+            <End Role="endereco" EntitySet="endereco" />
+          </AssociationSet>
+          <AssociationSet Name="FKEndereco682975" Association="keite_modasModel.Store.FKEndereco682975">
+            <End Role="uf" EntitySet="uf" />
+            <End Role="endereco" EntitySet="endereco" />
+          </AssociationSet>
+          <AssociationSet Name="FKImagem_Pro195794" Association="keite_modasModel.Store.FKImagem_Pro195794">
+            <End Role="produto" EntitySet="produto" />
+            <End Role="imagem_produto" EntitySet="imagem_produto" />
+          </AssociationSet>
+          <AssociationSet Name="FKItem_Venda722021" Association="keite_modasModel.Store.FKItem_Venda722021">
+            <End Role="venda" EntitySet="venda" />
+            <End Role="item_venda" EntitySet="item_venda" />
+          </AssociationSet>
+          <AssociationSet Name="FKItem_Venda816155" Association="keite_modasModel.Store.FKItem_Venda816155">
+            <End Role="produto" EntitySet="produto" />
+            <End Role="item_venda" EntitySet="item_venda" />
+          </AssociationSet>
+          <AssociationSet Name="FKParcelas279923" Association="keite_modasModel.Store.FKParcelas279923">
+            <End Role="venda" EntitySet="venda" />
+            <End Role="parcelas" EntitySet="parcelas" />
+          </AssociationSet>
+          <AssociationSet Name="FKProduto851122" Association="keite_modasModel.Store.FKProduto851122">
+            <End Role="tipoproduto" EntitySet="tipoproduto" />
+            <End Role="produto" EntitySet="produto" />
+          </AssociationSet>
+          <AssociationSet Name="FKTelefone32057" Association="keite_modasModel.Store.FKTelefone32057">
+            <End Role="pessoa" EntitySet="pessoa" />
+            <End Role="telefone" EntitySet="telefone" />
+          </AssociationSet>
+          <AssociationSet Name="FKTelefone517465" Association="keite_modasModel.Store.FKTelefone517465">
+            <End Role="tipo_telefone" EntitySet="tipo_telefone" />
+            <End Role="telefone" EntitySet="telefone" />
+          </AssociationSet>
+          <AssociationSet Name="FKVenda365787" Association="keite_modasModel.Store.FKVenda365787">
+            <End Role="pessoa" EntitySet="pessoa" />
+            <End Role="venda" EntitySet="venda" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="cidade">
+          <Key>
+            <PropertyRef Name="IdCidade" />
+          </Key>
+          <Property Name="IdCidade" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NomeCidade" Type="varchar" Nullable="false" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="endereco">
+          <Key>
+            <PropertyRef Name="IdPessoa" />
+          </Key>
+          <Property Name="IdPessoa" Type="smallint" Nullable="false" />
+          <Property Name="Logradouro" Type="varchar" Nullable="false" MaxLength="40" />
+          <Property Name="Numero" Type="smallint" Nullable="false" />
+          <Property Name="Bairro" Type="varchar" Nullable="false" MaxLength="40" />
+          <Property Name="IdLogradouro" Type="tinyint" Nullable="false" />
+          <Property Name="UF" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="IdCidade" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="imagem_produto">
+          <Key>
+            <PropertyRef Name="IdImagemProduto" />
+          </Key>
+          <Property Name="IdImagemProduto" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Caminho" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="IdProduto" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="item_venda">
+          <Key>
+            <PropertyRef Name="IdVenda" />
+            <PropertyRef Name="IdProduto" />
+          </Key>
+          <Property Name="IdVenda" Type="int" Nullable="false" />
+          <Property Name="IdProduto" Type="int" Nullable="false" />
+          <Property Name="Quantidade" Type="tinyint" Nullable="false" />
+          <Property Name="PrecoVenda" Type="decimal" Nullable="false" Precision="19" />
+        </EntityType>
+        <EntityType Name="parcelas">
+          <Key>
+            <PropertyRef Name="IdParcela" />
+            <PropertyRef Name="IdVenda" />
+          </Key>
+          <Property Name="IdParcela" Type="smallint" Nullable="false" />
+          <Property Name="IdVenda" Type="int" Nullable="false" />
+          <Property Name="DataGeracao" Type="date" Nullable="false" />
+          <Property Name="DataVencimento" Type="date" Nullable="false" />
+          <Property Name="ValorParcela" Type="double" Nullable="false" />
+          <Property Name="ValorPago" Type="double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="pessoa">
+          <Key>
+            <PropertyRef Name="IdPessoa" />
+          </Key>
+          <Property Name="IdPessoa" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="varchar" Nullable="false" MaxLength="40" />
+          <Property Name="CPF" Type="smallint" Nullable="false" />
+          <Property Name="Observacao" Type="text" />
+        </EntityType>
+        <EntityType Name="produto">
+          <Key>
+            <PropertyRef Name="IdProduto" />
+          </Key>
+          <Property Name="IdProduto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Preco" Type="double" Nullable="false" />
+          <Property Name="Fornecedor" Type="varchar" Nullable="false" MaxLength="40" />
+          <Property Name="Descricao" Type="varchar" Nullable="false" MaxLength="40" />
+          <Property Name="PrecoVenda" Type="double" Nullable="false" />
+          <Property Name="Observacao" Type="text" />
+          <Property Name="IdTipoProduto" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="telefone">
+          <Key>
+            <PropertyRef Name="IdPessoa" />
+          </Key>
+          <Property Name="IdPessoa" Type="smallint" Nullable="false" />
+          <Property Name="Numero" Type="int" Nullable="false" />
+          <Property Name="IdTipoTelefone" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tipo_logradouro">
+          <Key>
+            <PropertyRef Name="IdLogradouro" />
+          </Key>
+          <Property Name="IdLogradouro" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="varchar" Nullable="false" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="tipo_telefone">
+          <Key>
+            <PropertyRef Name="IdTipoTelefone" />
+          </Key>
+          <Property Name="IdTipoTelefone" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tipoproduto">
+          <Key>
+            <PropertyRef Name="IdTipoProduto" />
+          </Key>
+          <Property Name="IdTipoProduto" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="uf">
+          <Key>
+            <PropertyRef Name="UF" />
+          </Key>
+          <Property Name="UF" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="Estado" Type="varchar" Nullable="false" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="venda">
+          <Key>
+            <PropertyRef Name="IdVenda" />
+          </Key>
+          <Property Name="IdVenda" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdPessoa" Type="smallint" Nullable="false" />
+          <Property Name="DataVenda" Type="timestamp" Nullable="false" />
+          <Property Name="ValorVenda" Type="double" Nullable="false" />
+        </EntityType>
+        <Association Name="FKEndereco412701">
+          <End Role="tipo_logradouro" Type="keite_modasModel.Store.tipo_logradouro" Multiplicity="1" />
+          <End Role="endereco" Type="keite_modasModel.Store.endereco" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipo_logradouro">
+              <PropertyRef Name="IdLogradouro" />
+            </Principal>
+            <Dependent Role="endereco">
+              <PropertyRef Name="IdLogradouro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKEndereco471629">
+          <End Role="pessoa" Type="keite_modasModel.Store.pessoa" Multiplicity="1" />
+          <End Role="endereco" Type="keite_modasModel.Store.endereco" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="pessoa">
+              <PropertyRef Name="IdPessoa" />
+            </Principal>
+            <Dependent Role="endereco">
+              <PropertyRef Name="IdPessoa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKEndereco650717">
+          <End Role="cidade" Type="keite_modasModel.Store.cidade" Multiplicity="1" />
+          <End Role="endereco" Type="keite_modasModel.Store.endereco" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cidade">
+              <PropertyRef Name="IdCidade" />
+            </Principal>
+            <Dependent Role="endereco">
+              <PropertyRef Name="IdCidade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKEndereco682975">
+          <End Role="uf" Type="keite_modasModel.Store.uf" Multiplicity="1" />
+          <End Role="endereco" Type="keite_modasModel.Store.endereco" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="uf">
+              <PropertyRef Name="UF" />
+            </Principal>
+            <Dependent Role="endereco">
+              <PropertyRef Name="UF" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKImagem_Pro195794">
+          <End Role="produto" Type="keite_modasModel.Store.produto" Multiplicity="1" />
+          <End Role="imagem_produto" Type="keite_modasModel.Store.imagem_produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="produto">
+              <PropertyRef Name="IdProduto" />
+            </Principal>
+            <Dependent Role="imagem_produto">
+              <PropertyRef Name="IdProduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKItem_Venda722021">
+          <End Role="venda" Type="keite_modasModel.Store.venda" Multiplicity="1" />
+          <End Role="item_venda" Type="keite_modasModel.Store.item_venda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="venda">
+              <PropertyRef Name="IdVenda" />
+            </Principal>
+            <Dependent Role="item_venda">
+              <PropertyRef Name="IdVenda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKItem_Venda816155">
+          <End Role="produto" Type="keite_modasModel.Store.produto" Multiplicity="1" />
+          <End Role="item_venda" Type="keite_modasModel.Store.item_venda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="produto">
+              <PropertyRef Name="IdProduto" />
+            </Principal>
+            <Dependent Role="item_venda">
+              <PropertyRef Name="IdProduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKParcelas279923">
+          <End Role="venda" Type="keite_modasModel.Store.venda" Multiplicity="1" />
+          <End Role="parcelas" Type="keite_modasModel.Store.parcelas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="venda">
+              <PropertyRef Name="IdVenda" />
+            </Principal>
+            <Dependent Role="parcelas">
+              <PropertyRef Name="IdVenda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKProduto851122">
+          <End Role="tipoproduto" Type="keite_modasModel.Store.tipoproduto" Multiplicity="1" />
+          <End Role="produto" Type="keite_modasModel.Store.produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipoproduto">
+              <PropertyRef Name="IdTipoProduto" />
+            </Principal>
+            <Dependent Role="produto">
+              <PropertyRef Name="IdTipoProduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKTelefone32057">
+          <End Role="pessoa" Type="keite_modasModel.Store.pessoa" Multiplicity="1" />
+          <End Role="telefone" Type="keite_modasModel.Store.telefone" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="pessoa">
+              <PropertyRef Name="IdPessoa" />
+            </Principal>
+            <Dependent Role="telefone">
+              <PropertyRef Name="IdPessoa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKTelefone517465">
+          <End Role="tipo_telefone" Type="keite_modasModel.Store.tipo_telefone" Multiplicity="1" />
+          <End Role="telefone" Type="keite_modasModel.Store.telefone" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipo_telefone">
+              <PropertyRef Name="IdTipoTelefone" />
+            </Principal>
+            <Dependent Role="telefone">
+              <PropertyRef Name="IdTipoTelefone" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKVenda365787">
+          <End Role="pessoa" Type="keite_modasModel.Store.pessoa" Multiplicity="1" />
+          <End Role="venda" Type="keite_modasModel.Store.venda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pessoa">
+              <PropertyRef Name="IdPessoa" />
+            </Principal>
+            <Dependent Role="venda">
+              <PropertyRef Name="IdPessoa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="keite_modasModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="keite_modasEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="cidade" EntityType="keite_modasModel.cidade" />
+          <EntitySet Name="endereco" EntityType="keite_modasModel.endereco" />
+          <EntitySet Name="imagem_produto" EntityType="keite_modasModel.imagem_produto" />
+          <EntitySet Name="item_venda" EntityType="keite_modasModel.item_venda" />
+          <EntitySet Name="parcelas" EntityType="keite_modasModel.parcelas" />
+          <EntitySet Name="pessoa" EntityType="keite_modasModel.pessoa" />
+          <EntitySet Name="produto" EntityType="keite_modasModel.produto" />
+          <EntitySet Name="telefone" EntityType="keite_modasModel.telefone" />
+          <EntitySet Name="tipo_logradouro" EntityType="keite_modasModel.tipo_logradouro" />
+          <EntitySet Name="tipo_telefone" EntityType="keite_modasModel.tipo_telefone" />
+          <EntitySet Name="tipoproduto" EntityType="keite_modasModel.tipoproduto" />
+          <EntitySet Name="uf" EntityType="keite_modasModel.uf" />
+          <EntitySet Name="venda" EntityType="keite_modasModel.venda" />
+          <AssociationSet Name="FKEndereco650717" Association="keite_modasModel.FKEndereco650717">
+            <End Role="cidade" EntitySet="cidade" />
+            <End Role="endereco" EntitySet="endereco" />
+          </AssociationSet>
+          <AssociationSet Name="FKEndereco412701" Association="keite_modasModel.FKEndereco412701">
+            <End Role="tipo_logradouro" EntitySet="tipo_logradouro" />
+            <End Role="endereco" EntitySet="endereco" />
+          </AssociationSet>
+          <AssociationSet Name="FKEndereco471629" Association="keite_modasModel.FKEndereco471629">
+            <End Role="pessoa" EntitySet="pessoa" />
+            <End Role="endereco" EntitySet="endereco" />
+          </AssociationSet>
+          <AssociationSet Name="FKEndereco682975" Association="keite_modasModel.FKEndereco682975">
+            <End Role="uf" EntitySet="uf" />
+            <End Role="endereco" EntitySet="endereco" />
+          </AssociationSet>
+          <AssociationSet Name="FKImagem_Pro195794" Association="keite_modasModel.FKImagem_Pro195794">
+            <End Role="produto" EntitySet="produto" />
+            <End Role="imagem_produto" EntitySet="imagem_produto" />
+          </AssociationSet>
+          <AssociationSet Name="FKItem_Venda722021" Association="keite_modasModel.FKItem_Venda722021">
+            <End Role="venda" EntitySet="venda" />
+            <End Role="item_venda" EntitySet="item_venda" />
+          </AssociationSet>
+          <AssociationSet Name="FKItem_Venda816155" Association="keite_modasModel.FKItem_Venda816155">
+            <End Role="produto" EntitySet="produto" />
+            <End Role="item_venda" EntitySet="item_venda" />
+          </AssociationSet>
+          <AssociationSet Name="FKParcelas279923" Association="keite_modasModel.FKParcelas279923">
+            <End Role="venda" EntitySet="venda" />
+            <End Role="parcelas" EntitySet="parcelas" />
+          </AssociationSet>
+          <AssociationSet Name="FKTelefone32057" Association="keite_modasModel.FKTelefone32057">
+            <End Role="pessoa" EntitySet="pessoa" />
+            <End Role="telefone" EntitySet="telefone" />
+          </AssociationSet>
+          <AssociationSet Name="FKVenda365787" Association="keite_modasModel.FKVenda365787">
+            <End Role="pessoa" EntitySet="pessoa" />
+            <End Role="venda" EntitySet="venda" />
+          </AssociationSet>
+          <AssociationSet Name="FKProduto851122" Association="keite_modasModel.FKProduto851122">
+            <End Role="tipoproduto" EntitySet="tipoproduto" />
+            <End Role="produto" EntitySet="produto" />
+          </AssociationSet>
+          <AssociationSet Name="FKTelefone517465" Association="keite_modasModel.FKTelefone517465">
+            <End Role="tipo_telefone" EntitySet="tipo_telefone" />
+            <End Role="telefone" EntitySet="telefone" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="cidade">
+          <Key>
+            <PropertyRef Name="IdCidade" />
+          </Key>
+          <Property Name="IdCidade" Type="SByte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NomeCidade" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="endereco" Relationship="keite_modasModel.FKEndereco650717" FromRole="cidade" ToRole="endereco" />
+        </EntityType>
+        <EntityType Name="endereco">
+          <Key>
+            <PropertyRef Name="IdPessoa" />
+          </Key>
+          <Property Name="IdPessoa" Type="Int16" Nullable="false" />
+          <Property Name="Logradouro" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="Numero" Type="Int16" Nullable="false" />
+          <Property Name="Bairro" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="IdLogradouro" Type="SByte" Nullable="false" />
+          <Property Name="UF" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="IdCidade" Type="SByte" Nullable="false" />
+          <NavigationProperty Name="cidade" Relationship="keite_modasModel.FKEndereco650717" FromRole="endereco" ToRole="cidade" />
+          <NavigationProperty Name="tipo_logradouro" Relationship="keite_modasModel.FKEndereco412701" FromRole="endereco" ToRole="tipo_logradouro" />
+          <NavigationProperty Name="pessoa" Relationship="keite_modasModel.FKEndereco471629" FromRole="endereco" ToRole="pessoa" />
+          <NavigationProperty Name="uf1" Relationship="keite_modasModel.FKEndereco682975" FromRole="endereco" ToRole="uf" />
+        </EntityType>
+        <EntityType Name="imagem_produto">
+          <Key>
+            <PropertyRef Name="IdImagemProduto" />
+          </Key>
+          <Property Name="IdImagemProduto" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Caminho" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="IdProduto" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="produto" Relationship="keite_modasModel.FKImagem_Pro195794" FromRole="imagem_produto" ToRole="produto" />
+        </EntityType>
+        <EntityType Name="item_venda">
+          <Key>
+            <PropertyRef Name="IdVenda" />
+            <PropertyRef Name="IdProduto" />
+          </Key>
+          <Property Name="IdVenda" Type="Int32" Nullable="false" />
+          <Property Name="IdProduto" Type="Int32" Nullable="false" />
+          <Property Name="Quantidade" Type="SByte" Nullable="false" />
+          <Property Name="PrecoVenda" Type="Decimal" Nullable="false" />
+          <NavigationProperty Name="venda" Relationship="keite_modasModel.FKItem_Venda722021" FromRole="item_venda" ToRole="venda" />
+          <NavigationProperty Name="produto" Relationship="keite_modasModel.FKItem_Venda816155" FromRole="item_venda" ToRole="produto" />
+        </EntityType>
+        <EntityType Name="parcelas">
+          <Key>
+            <PropertyRef Name="IdParcela" />
+            <PropertyRef Name="IdVenda" />
+          </Key>
+          <Property Name="IdParcela" Type="Int16" Nullable="false" />
+          <Property Name="IdVenda" Type="Int32" Nullable="false" />
+          <Property Name="DataGeracao" Type="DateTime" Nullable="false" />
+          <Property Name="DataVencimento" Type="DateTime" Nullable="false" />
+          <Property Name="ValorParcela" Type="Double" Nullable="false" />
+          <Property Name="ValorPago" Type="Double" Nullable="false" />
+          <NavigationProperty Name="venda" Relationship="keite_modasModel.FKParcelas279923" FromRole="parcelas" ToRole="venda" />
+        </EntityType>
+        <EntityType Name="pessoa">
+          <Key>
+            <PropertyRef Name="IdPessoa" />
+          </Key>
+          <Property Name="IdPessoa" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="CPF" Type="Int16" Nullable="false" />
+          <Property Name="Observacao" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="endereco" Relationship="keite_modasModel.FKEndereco471629" FromRole="pessoa" ToRole="endereco" />
+          <NavigationProperty Name="telefone" Relationship="keite_modasModel.FKTelefone32057" FromRole="pessoa" ToRole="telefone" />
+          <NavigationProperty Name="venda" Relationship="keite_modasModel.FKVenda365787" FromRole="pessoa" ToRole="venda" />
+        </EntityType>
+        <EntityType Name="produto">
+          <Key>
+            <PropertyRef Name="IdProduto" />
+          </Key>
+          <Property Name="IdProduto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Preco" Type="Double" Nullable="false" />
+          <Property Name="Fornecedor" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="Descricao" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="PrecoVenda" Type="Double" Nullable="false" />
+          <Property Name="Observacao" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="IdTipoProduto" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="imagem_produto" Relationship="keite_modasModel.FKImagem_Pro195794" FromRole="produto" ToRole="imagem_produto" />
+          <NavigationProperty Name="item_venda" Relationship="keite_modasModel.FKItem_Venda816155" FromRole="produto" ToRole="item_venda" />
+          <NavigationProperty Name="tipoproduto" Relationship="keite_modasModel.FKProduto851122" FromRole="produto" ToRole="tipoproduto" />
+        </EntityType>
+        <EntityType Name="telefone">
+          <Key>
+            <PropertyRef Name="IdPessoa" />
+          </Key>
+          <Property Name="IdPessoa" Type="Int16" Nullable="false" />
+          <Property Name="Numero" Type="Int32" Nullable="false" />
+          <Property Name="IdTipoTelefone" Type="SByte" Nullable="false" />
+          <NavigationProperty Name="pessoa" Relationship="keite_modasModel.FKTelefone32057" FromRole="telefone" ToRole="pessoa" />
+          <NavigationProperty Name="tipo_telefone" Relationship="keite_modasModel.FKTelefone517465" FromRole="telefone" ToRole="tipo_telefone" />
+        </EntityType>
+        <EntityType Name="tipo_logradouro">
+          <Key>
+            <PropertyRef Name="IdLogradouro" />
+          </Key>
+          <Property Name="IdLogradouro" Type="SByte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="endereco" Relationship="keite_modasModel.FKEndereco412701" FromRole="tipo_logradouro" ToRole="endereco" />
+        </EntityType>
+        <EntityType Name="tipo_telefone">
+          <Key>
+            <PropertyRef Name="IdTipoTelefone" />
+          </Key>
+          <Property Name="IdTipoTelefone" Type="SByte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="telefone" Relationship="keite_modasModel.FKTelefone517465" FromRole="tipo_telefone" ToRole="telefone" />
+        </EntityType>
+        <EntityType Name="tipoproduto">
+          <Key>
+            <PropertyRef Name="IdTipoProduto" />
+          </Key>
+          <Property Name="IdTipoProduto" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="produto" Relationship="keite_modasModel.FKProduto851122" FromRole="tipoproduto" ToRole="produto" />
+        </EntityType>
+        <EntityType Name="uf">
+          <Key>
+            <PropertyRef Name="UF1" />
+          </Key>
+          <Property Name="UF1" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="Estado" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="endereco" Relationship="keite_modasModel.FKEndereco682975" FromRole="uf" ToRole="endereco" />
+        </EntityType>
+        <EntityType Name="venda">
+          <Key>
+            <PropertyRef Name="IdVenda" />
+          </Key>
+          <Property Name="IdVenda" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPessoa" Type="Int16" Nullable="false" />
+          <Property Name="DataVenda" Type="DateTime" Nullable="false" />
+          <Property Name="ValorVenda" Type="Double" Nullable="false" />
+          <NavigationProperty Name="item_venda" Relationship="keite_modasModel.FKItem_Venda722021" FromRole="venda" ToRole="item_venda" />
+          <NavigationProperty Name="parcelas" Relationship="keite_modasModel.FKParcelas279923" FromRole="venda" ToRole="parcelas" />
+          <NavigationProperty Name="pessoa" Relationship="keite_modasModel.FKVenda365787" FromRole="venda" ToRole="pessoa" />
+        </EntityType>
+        <Association Name="FKEndereco650717">
+          <End Role="cidade" Type="keite_modasModel.cidade" Multiplicity="1" />
+          <End Role="endereco" Type="keite_modasModel.endereco" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cidade">
+              <PropertyRef Name="IdCidade" />
+            </Principal>
+            <Dependent Role="endereco">
+              <PropertyRef Name="IdCidade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKEndereco412701">
+          <End Role="tipo_logradouro" Type="keite_modasModel.tipo_logradouro" Multiplicity="1" />
+          <End Role="endereco" Type="keite_modasModel.endereco" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipo_logradouro">
+              <PropertyRef Name="IdLogradouro" />
+            </Principal>
+            <Dependent Role="endereco">
+              <PropertyRef Name="IdLogradouro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKEndereco471629">
+          <End Role="pessoa" Type="keite_modasModel.pessoa" Multiplicity="1" />
+          <End Role="endereco" Type="keite_modasModel.endereco" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="pessoa">
+              <PropertyRef Name="IdPessoa" />
+            </Principal>
+            <Dependent Role="endereco">
+              <PropertyRef Name="IdPessoa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKEndereco682975">
+          <End Role="uf" Type="keite_modasModel.uf" Multiplicity="1" />
+          <End Role="endereco" Type="keite_modasModel.endereco" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="uf">
+              <PropertyRef Name="UF1" />
+            </Principal>
+            <Dependent Role="endereco">
+              <PropertyRef Name="UF" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKImagem_Pro195794">
+          <End Role="produto" Type="keite_modasModel.produto" Multiplicity="1" />
+          <End Role="imagem_produto" Type="keite_modasModel.imagem_produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="produto">
+              <PropertyRef Name="IdProduto" />
+            </Principal>
+            <Dependent Role="imagem_produto">
+              <PropertyRef Name="IdProduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKItem_Venda722021">
+          <End Role="venda" Type="keite_modasModel.venda" Multiplicity="1" />
+          <End Role="item_venda" Type="keite_modasModel.item_venda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="venda">
+              <PropertyRef Name="IdVenda" />
+            </Principal>
+            <Dependent Role="item_venda">
+              <PropertyRef Name="IdVenda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKItem_Venda816155">
+          <End Role="produto" Type="keite_modasModel.produto" Multiplicity="1" />
+          <End Role="item_venda" Type="keite_modasModel.item_venda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="produto">
+              <PropertyRef Name="IdProduto" />
+            </Principal>
+            <Dependent Role="item_venda">
+              <PropertyRef Name="IdProduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKParcelas279923">
+          <End Role="venda" Type="keite_modasModel.venda" Multiplicity="1" />
+          <End Role="parcelas" Type="keite_modasModel.parcelas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="venda">
+              <PropertyRef Name="IdVenda" />
+            </Principal>
+            <Dependent Role="parcelas">
+              <PropertyRef Name="IdVenda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKTelefone32057">
+          <End Role="pessoa" Type="keite_modasModel.pessoa" Multiplicity="1" />
+          <End Role="telefone" Type="keite_modasModel.telefone" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="pessoa">
+              <PropertyRef Name="IdPessoa" />
+            </Principal>
+            <Dependent Role="telefone">
+              <PropertyRef Name="IdPessoa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKVenda365787">
+          <End Role="pessoa" Type="keite_modasModel.pessoa" Multiplicity="1" />
+          <End Role="venda" Type="keite_modasModel.venda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pessoa">
+              <PropertyRef Name="IdPessoa" />
+            </Principal>
+            <Dependent Role="venda">
+              <PropertyRef Name="IdPessoa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKProduto851122">
+          <End Role="tipoproduto" Type="keite_modasModel.tipoproduto" Multiplicity="1" />
+          <End Role="produto" Type="keite_modasModel.produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipoproduto">
+              <PropertyRef Name="IdTipoProduto" />
+            </Principal>
+            <Dependent Role="produto">
+              <PropertyRef Name="IdTipoProduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKTelefone517465">
+          <End Role="tipo_telefone" Type="keite_modasModel.tipo_telefone" Multiplicity="1" />
+          <End Role="telefone" Type="keite_modasModel.telefone" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipo_telefone">
+              <PropertyRef Name="IdTipoTelefone" />
+            </Principal>
+            <Dependent Role="telefone">
+              <PropertyRef Name="IdTipoTelefone" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="keite_modasModelStoreContainer" CdmEntityContainer="keite_modasEntities1">
+          <EntitySetMapping Name="cidade">
+            <EntityTypeMapping TypeName="keite_modasModel.cidade">
+              <MappingFragment StoreEntitySet="cidade">
+                <ScalarProperty Name="IdCidade" ColumnName="IdCidade" />
+                <ScalarProperty Name="NomeCidade" ColumnName="NomeCidade" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="endereco">
+            <EntityTypeMapping TypeName="keite_modasModel.endereco">
+              <MappingFragment StoreEntitySet="endereco">
+                <ScalarProperty Name="IdPessoa" ColumnName="IdPessoa" />
+                <ScalarProperty Name="Logradouro" ColumnName="Logradouro" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+                <ScalarProperty Name="IdLogradouro" ColumnName="IdLogradouro" />
+                <ScalarProperty Name="UF" ColumnName="UF" />
+                <ScalarProperty Name="IdCidade" ColumnName="IdCidade" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="imagem_produto">
+            <EntityTypeMapping TypeName="keite_modasModel.imagem_produto">
+              <MappingFragment StoreEntitySet="imagem_produto">
+                <ScalarProperty Name="IdImagemProduto" ColumnName="IdImagemProduto" />
+                <ScalarProperty Name="Caminho" ColumnName="Caminho" />
+                <ScalarProperty Name="IdProduto" ColumnName="IdProduto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="item_venda">
+            <EntityTypeMapping TypeName="keite_modasModel.item_venda">
+              <MappingFragment StoreEntitySet="item_venda">
+                <ScalarProperty Name="IdVenda" ColumnName="IdVenda" />
+                <ScalarProperty Name="IdProduto" ColumnName="IdProduto" />
+                <ScalarProperty Name="Quantidade" ColumnName="Quantidade" />
+                <ScalarProperty Name="PrecoVenda" ColumnName="PrecoVenda" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="parcelas">
+            <EntityTypeMapping TypeName="keite_modasModel.parcelas">
+              <MappingFragment StoreEntitySet="parcelas">
+                <ScalarProperty Name="IdParcela" ColumnName="IdParcela" />
+                <ScalarProperty Name="IdVenda" ColumnName="IdVenda" />
+                <ScalarProperty Name="DataGeracao" ColumnName="DataGeracao" />
+                <ScalarProperty Name="DataVencimento" ColumnName="DataVencimento" />
+                <ScalarProperty Name="ValorParcela" ColumnName="ValorParcela" />
+                <ScalarProperty Name="ValorPago" ColumnName="ValorPago" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pessoa">
+            <EntityTypeMapping TypeName="keite_modasModel.pessoa">
+              <MappingFragment StoreEntitySet="pessoa">
+                <ScalarProperty Name="IdPessoa" ColumnName="IdPessoa" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="Observacao" ColumnName="Observacao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="produto">
+            <EntityTypeMapping TypeName="keite_modasModel.produto">
+              <MappingFragment StoreEntitySet="produto">
+                <ScalarProperty Name="IdProduto" ColumnName="IdProduto" />
+                <ScalarProperty Name="Preco" ColumnName="Preco" />
+                <ScalarProperty Name="Fornecedor" ColumnName="Fornecedor" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="PrecoVenda" ColumnName="PrecoVenda" />
+                <ScalarProperty Name="Observacao" ColumnName="Observacao" />
+                <ScalarProperty Name="IdTipoProduto" ColumnName="IdTipoProduto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="telefone">
+            <EntityTypeMapping TypeName="keite_modasModel.telefone">
+              <MappingFragment StoreEntitySet="telefone">
+                <ScalarProperty Name="IdPessoa" ColumnName="IdPessoa" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="IdTipoTelefone" ColumnName="IdTipoTelefone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipo_logradouro">
+            <EntityTypeMapping TypeName="keite_modasModel.tipo_logradouro">
+              <MappingFragment StoreEntitySet="tipo_logradouro">
+                <ScalarProperty Name="IdLogradouro" ColumnName="IdLogradouro" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipo_telefone">
+            <EntityTypeMapping TypeName="keite_modasModel.tipo_telefone">
+              <MappingFragment StoreEntitySet="tipo_telefone">
+                <ScalarProperty Name="IdTipoTelefone" ColumnName="IdTipoTelefone" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipoproduto">
+            <EntityTypeMapping TypeName="keite_modasModel.tipoproduto">
+              <MappingFragment StoreEntitySet="tipoproduto">
+                <ScalarProperty Name="IdTipoProduto" ColumnName="IdTipoProduto" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="uf">
+            <EntityTypeMapping TypeName="keite_modasModel.uf">
+              <MappingFragment StoreEntitySet="uf">
+                <ScalarProperty Name="UF1" ColumnName="UF" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="venda">
+            <EntityTypeMapping TypeName="keite_modasModel.venda">
+              <MappingFragment StoreEntitySet="venda">
+                <ScalarProperty Name="IdVenda" ColumnName="IdVenda" />
+                <ScalarProperty Name="IdPessoa" ColumnName="IdPessoa" />
+                <ScalarProperty Name="DataVenda" ColumnName="DataVenda" />
+                <ScalarProperty Name="ValorVenda" ColumnName="ValorVenda" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="TccEntities">
+        <EntityTypeShape EntityType="keite_modasModel.cidade" Width="1.5" PointX="0.75" PointY="3.25" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="keite_modasModel.endereco" Width="1.5" PointX="3" PointY="5.75" Height="3.1340950520833335" IsExpanded="true" />
+        <EntityTypeShape EntityType="keite_modasModel.imagem_produto" Width="1.5" PointX="5.25" PointY="19.125" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="keite_modasModel.item_venda" Width="1.5" PointX="5.25" PointY="11.875" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="keite_modasModel.parcelas" Width="1.5" PointX="5.25" PointY="15.75" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="keite_modasModel.pessoa" Width="1.5" PointX="0.75" PointY="6.25" Height="2.3648893229166656" IsExpanded="true" />
+        <EntityTypeShape EntityType="keite_modasModel.produto" Width="1.5" PointX="3" PointY="16.5" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="keite_modasModel.telefone" Width="1.5" PointX="6" PointY="6.375" Height="1.9802864583333308" IsExpanded="true" />
+        <EntityTypeShape EntityType="keite_modasModel.tipo_logradouro" Width="1.5" PointX="0.75" PointY="9.625" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="keite_modasModel.tipo_telefone" Width="1.5" PointX="3.75" PointY="2.625" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="keite_modasModel.tipoproduto" Width="1.5" PointX="0.75" PointY="17.25" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="keite_modasModel.uf" Width="1.5" PointX="0.75" PointY="11.875" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="keite_modasModel.venda" Width="1.5" PointX="3" PointY="12.75" Height="2.3648893229166674" IsExpanded="true" />
+        <AssociationConnector Association="keite_modasModel.FKEndereco650717" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="4.56443359375" />
+          <ConnectorPoint PointX="3.34375" PointY="4.56443359375" />
+          <ConnectorPoint PointX="3.34375" PointY="5.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="keite_modasModel.FKEndereco412701" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="10.422841796875" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="10.422841796875" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="10.422841796875" />
+          <ConnectorPoint PointX="2.7291666666666665" PointY="10.422841796875" />
+          <ConnectorPoint PointX="2.8958333333333335" PointY="10.422841796875" />
+          <ConnectorPoint PointX="3.75" PointY="10.422841796875" />
+          <ConnectorPoint PointX="3.75" PointY="8.8840950520833335" />
+        </AssociationConnector>
+        <AssociationConnector Association="keite_modasModel.FKEndereco471629" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="7.4324446614583328" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="7.4324446614583319" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="7.4324446614583328" />
+          <ConnectorPoint PointX="3" PointY="7.4324446614583328" />
+        </AssociationConnector>
+        <AssociationConnector Association="keite_modasModel.FKEndereco682975" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="11.876152846153847" />
+          <ConnectorPoint PointX="2.625" PointY="11.501152846153847" />
+          <ConnectorPoint PointX="2.625" PointY="6.5599703307291657" />
+          <ConnectorPoint PointX="3" PointY="6.5599703307291657" />
+        </AssociationConnector>
+        <AssociationConnector Association="keite_modasModel.FKImagem_Pro195794" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="19.283396809895834" />
+          <ConnectorPoint PointX="5.25" PointY="19.283396809895834" />
+        </AssociationConnector>
+        <AssociationConnector Association="keite_modasModel.FKItem_Venda722021" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="13.3987939453125" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="13.3987939453125" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="13.3987939453125" />
+          <ConnectorPoint PointX="5.25" PointY="13.3987939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="keite_modasModel.FKItem_Venda816155" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="16.501152846153843" />
+          <ConnectorPoint PointX="4.875" PointY="16.126152846153843" />
+          <ConnectorPoint PointX="4.875" PointY="12.605644972656249" />
+          <ConnectorPoint PointX="5.25" PointY="12.605644972656249" />
+        </AssociationConnector>
+        <AssociationConnector Association="keite_modasModel.FKParcelas279923" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="15.052580630608976" />
+          <ConnectorPoint PointX="4.8160744349011217" PointY="15.368655065510096" />
+          <ConnectorPoint PointX="4.9339255650988791" PointY="15.486506195707854" />
+          <ConnectorPoint PointX="5.1875" PointY="15.740080630608976" />
+          <ConnectorPoint PointX="5.1875" PointY="15.686347153846153" />
+          <ConnectorPoint PointX="5.2511528461538459" PointY="15.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="keite_modasModel.FKTelefone32057" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="8.6148893229166656" />
+          <ConnectorPoint PointX="1.5" PointY="9.1340950520833335" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="9.1340950520833335" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="9.1340950520833335" />
+          <ConnectorPoint PointX="3.6666666666666665" PointY="9.1340950520833335" />
+          <ConnectorPoint PointX="3.8333333333333335" PointY="9.1340950520833335" />
+          <ConnectorPoint PointX="5.625" PointY="9.1340950520833335" />
+          <ConnectorPoint PointX="5.625" PointY="7.3651432291666659" />
+          <ConnectorPoint PointX="6" PointY="7.3651432291666659" />
+        </AssociationConnector>
+        <AssociationConnector Association="keite_modasModel.FKVenda365787" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="8.5525806306089738" />
+          <ConnectorPoint PointX="2.5660744349011213" PointY="8.8686550655100937" />
+          <ConnectorPoint PointX="2.6839255650988791" PointY="8.986506195707852" />
+          <ConnectorPoint PointX="2.8125" PointY="9.1150806306089738" />
+          <ConnectorPoint PointX="2.8125" PointY="13.932444661458334" />
+          <ConnectorPoint PointX="3" PointY="13.932444661458334" />
+        </AssociationConnector>
+        <AssociationConnector Association="keite_modasModel.FKProduto851122" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="18.047841796875" />
+          <ConnectorPoint PointX="3" PointY="18.047841796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="keite_modasModel.FKTelefone517465" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="3.422841796875" />
+          <ConnectorPoint PointX="6.75" PointY="3.422841796875" />
+          <ConnectorPoint PointX="6.75" PointY="6.375" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

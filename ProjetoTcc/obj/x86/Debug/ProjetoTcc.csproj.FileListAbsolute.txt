@@ -1,0 +1,11 @@
+D:\TCC Project\TccProject\ProjetoTcc\obj\x86\Debug\ProjetoTcc.Properties.Resources.resources
+D:\TCC Project\TccProject\ProjetoTcc\obj\x86\Debug\ProjetoTcc.csproj.GenerateResource.Cache
+D:\TCC Project\TccProject\ProjetoTcc\bin\Debug\ProjetoTcc.exe.config
+D:\TCC Project\TccProject\ProjetoTcc\obj\x86\Debug\ProjetoTcc.FormPrincipal.resources
+D:\TCC Project\TccProject\ProjetoTcc\obj\x86\Debug\ProjetoTcc.Views.Produto.FormProduto.resources
+D:\TCC Project\TccProject\ProjetoTcc\bin\Debug\ProjetoTcc.exe
+D:\TCC Project\TccProject\ProjetoTcc\bin\Debug\ProjetoTcc.pdb
+D:\TCC Project\TccProject\ProjetoTcc\obj\x86\Debug\ProjetoTcc.csprojResolveAssemblyReference.cache
+D:\TCC Project\TccProject\ProjetoTcc\obj\x86\Debug\ProjetoTcc.exe
+D:\TCC Project\TccProject\ProjetoTcc\obj\x86\Debug\ProjetoTcc.pdb
+D:\TCC Project\TccProject\ProjetoTcc\obj\x86\Debug\ProjetoTcc.Views.Cliente.FormCliente.resources

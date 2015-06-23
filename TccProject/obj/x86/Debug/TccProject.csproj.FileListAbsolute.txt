@@ -1,0 +1,8 @@
+D:\TCC Project\TccProject\TccProject\obj\x86\Debug\TccProject.FormPrincipal.resources
+D:\TCC Project\TccProject\TccProject\obj\x86\Debug\TccProject.Properties.Resources.resources
+D:\TCC Project\TccProject\TccProject\obj\x86\Debug\TccProject.csproj.GenerateResource.Cache
+D:\TCC Project\TccProject\TccProject\bin\Debug\TccProject.exe.config
+D:\TCC Project\TccProject\TccProject\bin\Debug\TccProject.exe
+D:\TCC Project\TccProject\TccProject\bin\Debug\TccProject.pdb
+D:\TCC Project\TccProject\TccProject\obj\x86\Debug\TccProject.exe
+D:\TCC Project\TccProject\TccProject\obj\x86\Debug\TccProject.pdb
