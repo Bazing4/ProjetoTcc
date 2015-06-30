@@ -13,7 +13,7 @@ namespace ProjetoTcc.Views.Produto
 {
     public partial class FormProduto : Form
     {
-        private keite_modasEntities db;
+        private keite_modasEntities1 db;
 
         private produto produto;
         private ProdutoData produtoData;
@@ -24,7 +24,7 @@ namespace ProjetoTcc.Views.Produto
         {
             InitializeComponent();
 
-            db = new keite_modasEntities();
+            db = new keite_modasEntities1();
 
             produtoData = new ProdutoData(db);
             tipoProdutoData = new TipoProdutoData(db);

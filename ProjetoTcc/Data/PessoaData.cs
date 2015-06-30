@@ -9,10 +9,10 @@ namespace ProjetoTcc.Data
 {
     class PessoaData
     {
-        public keite_modasEntities db;
+        public keite_modasEntities1 db;
         private ObjectSet<pessoa> pessoas;
 
-        public PessoaData(keite_modasEntities _db)
+        public PessoaData(keite_modasEntities1 _db)
         {
             db = _db;
             pessoas = db.CreateObjectSet<pessoa>();

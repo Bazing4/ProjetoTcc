@@ -9,10 +9,10 @@ namespace ProjetoTcc.Data
 {
     class TipoProdutoData
     {
-        public keite_modasEntities db;
+        public keite_modasEntities1 db;
         private ObjectSet<tipoproduto> tipoProdutos;
 
-        public TipoProdutoData(keite_modasEntities _db)
+        public TipoProdutoData(keite_modasEntities1 _db)
         {
             db = _db;
             tipoProdutos = db.CreateObjectSet<tipoproduto>();

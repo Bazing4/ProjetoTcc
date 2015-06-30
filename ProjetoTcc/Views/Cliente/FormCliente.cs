@@ -13,7 +13,7 @@ namespace ProjetoTcc.Views.Cliente
 {
     public partial class FormCliente : Form
     {
-        private keite_modasEntities db;
+        private keite_modasEntities1 db;
         private pessoa pessoa;
         private TelefoneData telefoneData;
         private PessoaData pessoaData;
@@ -32,7 +32,7 @@ namespace ProjetoTcc.Views.Cliente
                 t.Numero = telefone;
                 p.telefones.add(t);
             }*/
-            db = new keite_modasEntities();
+            db = new keite_modasEntities1();
             pessoaData = new PessoaData(db);
             enderecoData = new EnderecoData(db);
             telefoneData = new TelefoneData(db);
@@ -100,7 +100,7 @@ namespace ProjetoTcc.Views.Cliente
         private void obterPessoa()
         {
             pessoa.Nome = txtNome.Text;
-            pessoa.CPF = (mtxCPF.Text.ToString()); //pessoa
+            pessoa.CPF = mtxCPF.Text; //pessoa
             pessoa.Observacao = rtxtObservacao.Text;
 
             pessoa.endereco.Bairro = txtBairro.Text;

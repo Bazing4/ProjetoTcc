@@ -59,13 +59,11 @@
     <Compile Include="Data\TelefoneData.cs" />
     <Compile Include="Data\TipoLogradouroData.cs" />
     <Compile Include="Data\TipoProdutoData.cs" />
-    <Compile Include="Data\TipoTelefoneData.cs" />
-    <Compile Include="Data\UfData.cs" />
     <Compile Include="Data\VendaData.cs" />
-    <Compile Include="Entity\ProjetoTccEntities.Designer.cs">
+    <Compile Include="Entity\keite_modasEntities.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProjetoTccEntities.edmx</DependentUpon>
+      <DependentUpon>keite_modasEntities.edmx</DependentUpon>
     </Compile>
     <Compile Include="Views\Cliente\FormCliente.cs">
       <SubType>Form</SubType>
@@ -106,11 +104,11 @@
     <EmbeddedResource Include="Views\Produto\FormProduto.resx">
       <DependentUpon>FormProduto.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="Entity\ProjetoTccEntities.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ProjetoTccEntities.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="App.Config" />
+    <EntityDeploy Include="Entity\keite_modasEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>keite_modasEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="ProjetoTcc.Entity.keite_modasEntities.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

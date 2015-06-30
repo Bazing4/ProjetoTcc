@@ -9,10 +9,10 @@ namespace ProjetoTcc.Data
 {
     class CidadeData
     {
-        public keite_modasEntities db;
+        public keite_modasEntities1 db;
         private ObjectSet<cidade> cidades;
 
-        public CidadeData(keite_modasEntities _db)
+        public CidadeData(keite_modasEntities1 _db)
         {
             db = _db;
             cidades = db.CreateObjectSet<cidade>();

@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="keite_modasModelStoreContainer" CdmEntityContainer="keite_modasEntities1">
+    <EntitySetMapping Name="cidade">
+      <EntityTypeMapping TypeName="keite_modasModel.cidade">
+        <MappingFragment StoreEntitySet="cidade">
+          <ScalarProperty Name="IdCidade" ColumnName="IdCidade" />
+          <ScalarProperty Name="NomeCidade" ColumnName="NomeCidade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="endereco">
+      <EntityTypeMapping TypeName="keite_modasModel.endereco">
+        <MappingFragment StoreEntitySet="endereco">
+          <ScalarProperty Name="IdPessoa" ColumnName="IdPessoa" />
+          <ScalarProperty Name="Logradouro" ColumnName="Logradouro" />
+          <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+          <ScalarProperty Name="IdLogradouro" ColumnName="IdLogradouro" />
+          <ScalarProperty Name="IdCidade" ColumnName="IdCidade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="imagem_produto">
+      <EntityTypeMapping TypeName="keite_modasModel.imagem_produto">
+        <MappingFragment StoreEntitySet="imagem_produto">
+          <ScalarProperty Name="IdImagemProduto" ColumnName="IdImagemProduto" />
+          <ScalarProperty Name="Caminho" ColumnName="Caminho" />
+          <ScalarProperty Name="IdProduto" ColumnName="IdProduto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="item_venda">
+      <EntityTypeMapping TypeName="keite_modasModel.item_venda">
+        <MappingFragment StoreEntitySet="item_venda">
+          <ScalarProperty Name="IdVenda" ColumnName="IdVenda" />
+          <ScalarProperty Name="IdProduto" ColumnName="IdProduto" />
+          <ScalarProperty Name="Quantidade" ColumnName="Quantidade" />
+          <ScalarProperty Name="PrecoVenda" ColumnName="PrecoVenda" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="parcelas">
+      <EntityTypeMapping TypeName="keite_modasModel.parcelas">
+        <MappingFragment StoreEntitySet="parcelas">
+          <ScalarProperty Name="IdParcela" ColumnName="IdParcela" />
+          <ScalarProperty Name="IdVenda" ColumnName="IdVenda" />
+          <ScalarProperty Name="DataGeracao" ColumnName="DataGeracao" />
+          <ScalarProperty Name="DataVencimento" ColumnName="DataVencimento" />
+          <ScalarProperty Name="ValorParcela" ColumnName="ValorParcela" />
+          <ScalarProperty Name="ValorPago" ColumnName="ValorPago" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="produto">
+      <EntityTypeMapping TypeName="keite_modasModel.produto">
+        <MappingFragment StoreEntitySet="produto">
+          <ScalarProperty Name="IdProduto" ColumnName="IdProduto" />
+          <ScalarProperty Name="Preco" ColumnName="Preco" />
+          <ScalarProperty Name="Fornecedor" ColumnName="Fornecedor" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="PrecoVenda" ColumnName="PrecoVenda" />
+          <ScalarProperty Name="Observacao" ColumnName="Observacao" />
+          <ScalarProperty Name="IdTipoProduto" ColumnName="IdTipoProduto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="telefone">
+      <EntityTypeMapping TypeName="keite_modasModel.telefone">
+        <MappingFragment StoreEntitySet="telefone">
+          <ScalarProperty Name="IdPessoa" ColumnName="IdPessoa" />
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipo_logradouro">
+      <EntityTypeMapping TypeName="keite_modasModel.tipo_logradouro">
+        <MappingFragment StoreEntitySet="tipo_logradouro">
+          <ScalarProperty Name="IdLogradouro" ColumnName="IdLogradouro" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipoproduto">
+      <EntityTypeMapping TypeName="keite_modasModel.tipoproduto">
+        <MappingFragment StoreEntitySet="tipoproduto">
+          <ScalarProperty Name="IdTipoProduto" ColumnName="IdTipoProduto" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="venda">
+      <EntityTypeMapping TypeName="keite_modasModel.venda">
+        <MappingFragment StoreEntitySet="venda">
+          <ScalarProperty Name="IdVenda" ColumnName="IdVenda" />
+          <ScalarProperty Name="IdPessoa" ColumnName="IdPessoa" />
+          <ScalarProperty Name="DataVenda" ColumnName="DataVenda" />
+          <ScalarProperty Name="ValorVenda" ColumnName="ValorVenda" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pessoa">
+      <EntityTypeMapping TypeName="keite_modasModel.pessoa">
+        <MappingFragment StoreEntitySet="pessoa">
+          <ScalarProperty Name="Observacao" ColumnName="Observacao" />
+          <ScalarProperty Name="CPF" ColumnName="CPF" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="IdPessoa" ColumnName="IdPessoa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -9,10 +9,10 @@ namespace ProjetoTcc.Data
 {
     class TipoLogradouroData
     {
-        public keite_modasEntities db;
+        public keite_modasEntities1 db;
         private ObjectSet<tipo_logradouro> tipoLogradouros;
 
-        public TipoLogradouroData(keite_modasEntities _db)
+        public TipoLogradouroData(keite_modasEntities1 _db)
         {
             db = _db;
             tipoLogradouros = db.CreateObjectSet<tipo_logradouro>();

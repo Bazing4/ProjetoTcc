@@ -9,10 +9,10 @@ namespace ProjetoTcc.Data
 {
     class EnderecoData
     {
-        public keite_modasEntities db;
+        public keite_modasEntities1 db;
         private ObjectSet<endereco> enderecos;
 
-        public EnderecoData(keite_modasEntities _db)
+        public EnderecoData(keite_modasEntities1 _db)
         {
             db = _db;
             enderecos = db.CreateObjectSet<endereco>();
